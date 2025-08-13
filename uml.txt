@@ -1,0 +1,45 @@
++-------------------+
+|     Workout       |
++-------------------+
+| - type: String    |
+| - caloriesBurned: int |
++-------------------+
+| + Workout(type: String, caloriesBurned: int) |
+| + getType(): String                          |
+| + getCaloriesBurned(): int                   |
+| + workoutInfo(): String                      |
++-------------------+
+             ▲
+             |
+             |
++-------------------------+
+|     CardioWorkout       |
++-------------------------+
+|                         |
++-------------------------+
+| + CardioWorkout(type: String, caloriesBurned: int) |
+| + workoutInfo(): String   <<overrides>>            |
++-------------------------+
+
++-----------------------------+
+|      FitnessTracker         |
++-----------------------------+
+| - calorieGoal: int          |
+| - waterGoal: int            |
+| - totalCalories: int        |
+| - totalWater: int           |
+| - streakCount: int          |
++-----------------------------+
+| + FitnessTracker(calorieGoal: int, waterGoal: int) |
+| + logWorkout(workout: Workout, waterIntake: int)   |
+| + viewSummary(): void                              |
+| - checkGoals(): void                               |
++-----------------------------+
+
++---------------------------+
+|    FitnessTrackerApp      |
++---------------------------+
+|                           |
++---------------------------+
+| + main(String[]): void    |
++---------------------------+
